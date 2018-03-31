@@ -1,3 +1,4 @@
+import random
 from .exceptions import *
 
 # Complete with your own, just for fun :)
@@ -5,16 +6,21 @@ LIST_OF_WORDS = []
 
 
 def _get_random_word(list_of_words):
-    pass
+    return random.choice(list_of_words)
 
 
 def _mask_word(word):
-    pass
+    mask = len(word) * '*'
+    return mask
 
 
 def _uncover_word(answer_word, masked_word, character):
-    pass
-
+    if character in answer_word:
+        index_of_word = answer_word.index()
+    for element in masked_word:
+        if masked_word.index() == index_of_word:
+            masked_word.replace(element, character)
+        
 
 def guess_letter(game, letter):
     pass
