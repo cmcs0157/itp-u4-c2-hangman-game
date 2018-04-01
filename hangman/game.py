@@ -15,11 +15,17 @@ def _mask_word(word):
 
 
 def _uncover_word(answer_word, masked_word, character):
-    if character in answer_word:
-        index_of_word = answer_word.index()
-    for element in masked_word:
-        if masked_word.index() == index_of_word:
-            masked_word.replace(element, character)
+    index_of_word = []
+    for index, word in enumerate(answer_word):
+        if word == character:
+            index_of_word.append(index)
+            
+    unmasked_word = []    
+    for element in index_of_word:
+        try:
+            return masked_word.replace(masked_word[element], character)
+        except:
+            raise KeyError
         
 
 def guess_letter(game, letter):
